@@ -1,20 +1,29 @@
-name <- "krowa"
-age <- 33
-siblings <- TRUE
-month <- 11
-install.packages("here")
-    
-library(here)
-require(here)
+#policja.droga.info.dzienne
+#matrix_policja.drogo <- matrix(nrow = nrow(policja.droga.info.dzienne), ncol = ncol(policja.droga.info.dzienne))
+#for (dane in policja.droga.info.dzienne){
+#  if(is.numeric(dane) == TRUE){
+ #   append(dane, matrix_policja.drogo)
+  #}else if {
+   # rbind(NA, matrix_policja.drogo)
+  #}
+#}
+#print(policja.droga.info.dzienne_numerics)
 
-library(here)
+policja.droga.info.dzienne_numeric <- policja.droga.info.dzienne
+policja.droga.info.dzienne_numeric$dzien_tygodnia <- NULL
+policja_matrix <- data.matrix(policja.droga.info.dzienne_numeric, NULL)
 
-student_names <- c("jarek", "szpaku", "george")
+policja.droga.info.dzienne_char <- policja.droga.info.dzienne
+policja.droga.info.dzienne_char <- policja.droga.info.dzienne$dzien_tygodnia
+policja_matrix_char <- data.matrix(policja.droga.info.dzienne_char)
+
+print(is.matrix(policja_matrix))
+print(is.matrix(policja_matrix_char))
+
+matrix_all_raport <- cbind(policja_matrix,policja_matrix_char)
+df_all_raport <- data.frame(matrix_all_raport)
 
 
-student_pet <- c(FALSE, TRUE, TRUE)
-student_siblings <- c("fet"=2,"biel"=3,"urb"=4)
+policja.droga.info.dzienne$zatrzymani_poszukiwani
+policja.droga.info.dzienne$kierujacy_po_spozyciu_alkoholu
 
-poland_medals <- c( "gold"= 1,"silver"=4,"brown"=5, sum"=10)
-
-matrix_eloelo = matrix()

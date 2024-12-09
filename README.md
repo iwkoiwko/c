@@ -24,6 +24,23 @@ matrix_all_raport <- cbind(policja_matrix,policja_matrix_char)
 df_all_raport <- data.frame(matrix_all_raport)
 
 
-policja.droga.info.dzienne$zatrzymani_poszukiwani
-policja.droga.info.dzienne$kierujacy_po_spozyciu_alkoholu
+o <- policja.droga.info.dzienne$zatrzymani_poszukiwani
+b <- policja.droga.info.dzienne$kierujacy_po_spozyciu_alkoholu
+policja_kierujacy_po_spozyciu_alkoholu_zatrzymani_poszukiwani<- cbind(o,b)
+licznik <- 1
+print(policja_kierujacy_po_spozyciu_alkoholu_zatrzymani_poszukiwani)
 
+for (indeks in seq_along(policja_kierujacy_po_spozyciu_alkoholu_zatrzymani_poszukiwani)) {
+   if(indeks %% 50 == 0){
+    
+     srednia_kieruyjacy <- mean(b[1:indeks])
+      mediana_kierujacy <- median(b[1:indeks])
+      srednia_zatrzymani <- mean(o[1:indeks])
+     miedana_zatrzymani <- median(o[1:indeks])}
+      if(srednia_kieruyjacy > srednia_zatrzymani){print("średnia kierujacych jest wieksza od sredniej zatrzymanych")
+     } else if {(srednia_kieruyjacy > srednia_zatrzymani){print("średnia kierujacych jest mniejsza od sredniej zatrzymanych"}
+     
+     
+     licznik <- licznik +1
+   else { next
+   }  
